@@ -34,6 +34,23 @@
               "shortname": "Book Clubs"
             }
           ]
+        },
+        "matchingRules": {
+          "$.body.results[1].name": {
+            "match": "regex",
+            "regex": "Games|Book Clubs"
+          },
+          "$.body.results[1].sort_name": {
+            "match": "regex",
+            "regex": "Games|Book Clubs"
+          },
+          "$.body.results[1].id": {
+            "match": "type"
+          },
+          "$.body.results[1].shortname": {
+            "match": "regex",
+            "regex": "Games|Book Clubs"
+          }
         }
       }
     }

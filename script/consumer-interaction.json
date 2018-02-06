@@ -12,18 +12,18 @@
     "headers": {
     },
     "matchingRules": {
-      "$.body.results[*].name": {
+      "$.body.results[1].name": {
         "match": "regex",
         "regex": "Games|Book Clubs"
       },
-      "$.body.results[*].sort_name": {
+      "$.body.results[1].sort_name": {
         "match": "regex",
         "regex": "Games|Book Clubs"
       },
-      "$.body.results[*].id": {
+      "$.body.results[1].id": {
         "match": "type"
       },
-      "$.body.results[*].shortname": {
+      "$.body.results[1].shortname": {
         "match": "regex",
         "regex": "Games|Book Clubs"
       }

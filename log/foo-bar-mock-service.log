@@ -1,6 +1,6 @@
-I, [2018-02-05T21:00:25.639492 #5289]  INFO -- : Cleared interactions
-I, [2018-02-05T21:00:25.729492 #5289]  INFO -- : Registered expected interaction GET /foo
-D, [2018-02-05T21:00:25.732550 #5289] DEBUG -- : {
+I, [2018-02-05T21:06:25.565903 #5653]  INFO -- : Cleared interactions
+I, [2018-02-05T21:06:25.660919 #5653]  INFO -- : Registered expected interaction GET /foo
+D, [2018-02-05T21:06:25.666079 #5653] DEBUG -- : {
   "description": "General Meetup Categories 6",
   "providerState": "A GET request to return JSON using Meetups category api under version 2 6",
   "request": {
@@ -22,17 +22,38 @@ D, [2018-02-05T21:00:25.732550 #5289] DEBUG -- : {
           "shortname": "Games"
         },
         {
-          "name": "Book Clubs",
-          "sort_name": "Book Clubs",
-          "id": 18,
-          "shortname": "Book Clubs"
+          "name": {
+            "json_class": "Pact::Term",
+            "data": {
+              "generate": "Book Clubs",
+              "matcher": {"json_class":"Regexp","o":0,"s":"Games|Book Clubs"}
+            }
+          },
+          "sort_name": {
+            "json_class": "Pact::Term",
+            "data": {
+              "generate": "Book Clubs",
+              "matcher": {"json_class":"Regexp","o":0,"s":"Games|Book Clubs"}
+            }
+          },
+          "id": {
+            "json_class": "Pact::SomethingLike",
+            "contents": 18
+          },
+          "shortname": {
+            "json_class": "Pact::Term",
+            "data": {
+              "generate": "Book Clubs",
+              "matcher": {"json_class":"Regexp","o":0,"s":"Games|Book Clubs"}
+            }
+          }
         }
       ]
     }
   }
 }
-I, [2018-02-05T21:00:25.813978 #5289]  INFO -- : Received request GET /foo
-D, [2018-02-05T21:00:25.815696 #5289] DEBUG -- : {
+I, [2018-02-05T21:06:25.747958 #5653]  INFO -- : Received request GET /foo
+D, [2018-02-05T21:06:25.749344 #5653] DEBUG -- : {
   "path": "/foo",
   "query": "",
   "method": "get",
@@ -43,8 +64,8 @@ D, [2018-02-05T21:00:25.815696 #5289] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2018-02-05T21:00:25.818953 #5289]  INFO -- : Found matching response for GET /foo
-D, [2018-02-05T21:00:25.820454 #5289] DEBUG -- : {
+I, [2018-02-05T21:06:25.752363 #5653]  INFO -- : Found matching response for GET /foo
+D, [2018-02-05T21:06:25.757099 #5653] DEBUG -- : {
   "status": 200,
   "headers": {
   },
@@ -57,13 +78,46 @@ D, [2018-02-05T21:00:25.820454 #5289] DEBUG -- : {
         "shortname": "Games"
       },
       {
-        "name": "Book Clubs",
-        "sort_name": "Book Clubs",
-        "id": 18,
-        "shortname": "Book Clubs"
+        "name": {
+          "json_class": "Pact::Term",
+          "data": {
+            "generate": "Book Clubs",
+            "matcher": {
+              "json_class": "Regexp",
+              "o": 0,
+              "s": "Games|Book Clubs"
+            }
+          }
+        },
+        "sort_name": {
+          "json_class": "Pact::Term",
+          "data": {
+            "generate": "Book Clubs",
+            "matcher": {
+              "json_class": "Regexp",
+              "o": 0,
+              "s": "Games|Book Clubs"
+            }
+          }
+        },
+        "id": {
+          "json_class": "Pact::SomethingLike",
+          "contents": 18
+        },
+        "shortname": {
+          "json_class": "Pact::Term",
+          "data": {
+            "generate": "Book Clubs",
+            "matcher": {
+              "json_class": "Regexp",
+              "o": 0,
+              "s": "Games|Book Clubs"
+            }
+          }
+        }
       }
     ]
   }
 }
-I, [2018-02-05T21:00:25.900053 #5289]  INFO -- : Verifying - interactions matched
-I, [2018-02-05T21:00:25.975195 #5289]  INFO -- : Writing pact for Bar to ./pacts/foo-bar.json
+I, [2018-02-05T21:06:25.832311 #5653]  INFO -- : Verifying - interactions matched
+I, [2018-02-05T21:06:25.895987 #5653]  INFO -- : Writing pact for Bar to ./pacts/foo-bar.json
