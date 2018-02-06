@@ -1,0 +1,37 @@
+{
+  "consumer": {
+    "name": "Foo"
+  },
+  "provider": {
+    "name": "Bar"
+  },
+  "interactions": [
+    {
+      "description": "Test Case 1",
+      "providerState": "Test Case 1",
+      "request": {
+        "method": "GET",
+        "path": "/testme"
+      },
+      "response": {
+        "headers": {
+        },
+        "body": {
+          "myDates": [
+            "29/10/2015"
+          ]
+        },
+        "matchingRules": {
+          "$.body.myDates": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

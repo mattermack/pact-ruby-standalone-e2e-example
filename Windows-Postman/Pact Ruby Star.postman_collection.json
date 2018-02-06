@@ -1,0 +1,150 @@
+{
+	"info": {
+		"name": "Pact Ruby Star",
+		"_postman_id": "704f057d-77f1-638e-4fab-8b14b1cd3b40",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Delete Interactions",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-Pact-Mock-Service",
+						"value": "true"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1234/interactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"interactions"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Interaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Pact-Mock-Service",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Test Case 1\",\r\n    \"providerState\": \"Test Case 1\",\r\n    \"request\": {\r\n        \"method\": \"GET\",\r\n        \"path\": \"/testme\"\r\n    },\r\n    \"response\":{\r\n\t\t\"headers\": {},\r\n\t\t\"body\" : {\r\n\t\t  \"myDates\": [\r\n\t\t\t\"29/10/2015\"\r\n\t\t  ]\r\n\t\t},\r\n\t\t\"matchingRules\" : {\r\n\t\t  \"$.body.myDates\": {\r\n\t\t\t\"match\": \"type\"\r\n\t\t  },\r\n\t\t  \"$.body.myDates[*]\" : {\r\n\t\t\t\"match\": \"regex\", \"regex\" : \"\\\\d{2}/\\\\d{2}/\\\\d{4}\"\r\n\t\t  }\r\n\t\t}\r\n    }\r\n}\t"
+				},
+				"url": {
+					"raw": "http://localhost:1234/interactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"interactions"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Make Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1234/testme",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"testme"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Verification",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Pact-Mock-Service",
+						"value": "true"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1234/interactions/verification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"interactions",
+						"verification"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pacts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Pact-Mock-Service",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"consumer\": {\"name\": \"Foo\"}, \"provider\": {\"name\": \"Bar\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:1234/pact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"pact"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
