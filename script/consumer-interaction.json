@@ -1,16 +1,48 @@
 {
-  "description": "foo",
+  "description": "General Meetup Categories 6",
+  "providerState": "A GET request to return JSON using Meetups category api under version 2 6",
   "request": {
-    "path": "/foo",
-    "method": "GET"
+    "method": "GET",
+    "headers": {
+    },
+    "path": "/foo"
   },
   "response": {
     "status": 200,
     "headers": {
-      "Content-Type": "application/json"
+    },
+    "matchingRules": {
+      "$.body.results[*].name": {
+        "match": "regex",
+        "regex": "Games|Book Clubs"
+      },
+      "$.body.results[*].sort_name": {
+        "match": "regex",
+        "regex": "Games|Book Clubs"
+      },
+      "$.body.results[*].id": {
+        "match": "type"
+      },
+      "$.body.results[*].shortname": {
+        "match": "regex",
+        "regex": "Games|Book Clubs"
+      }
     },
     "body": {
-      "message": "Hello world"
+      "results": [
+        {
+          "name": "Games",
+          "sort_name": "Games",
+          "id": 11,
+          "shortname": "Games"
+        },
+        {
+          "name": "Book Clubs",
+          "sort_name": "Book Clubs",
+          "id": 18,
+          "shortname": "Book Clubs"
+        }
+      ]
     }
   }
 }

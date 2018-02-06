@@ -1,0 +1,6 @@
+# Logfile created on 2018-02-05 21:00:29 -0600 by logger.rb/47272
+I, [2018-02-05T21:00:29.601943 #5361]  INFO -- : Running example 'Verifying a pact between Foo and Bar Given A GET request to return JSON using Meetups category api under version 2 6 General Meetup Categories 6 with GET /foo returns a response which has status code 200'
+I, [2018-02-05T21:00:29.602290 #5361]  INFO -- : Sending GET request to path: "/foo" with headers: {}, see debug logs for body
+D, [2018-02-05T21:00:29.602382 #5361] DEBUG -- : body :
+I, [2018-02-05T21:00:29.707063 #5361]  INFO -- : Received response with status: 200, headers: {"Content-Type"=>"application/json", "Server"=>"WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)", "Date"=>"Tue, 06 Feb 2018 03:00:29 GMT", "Connection"=>"Keep-Alive", "Content-Length"=>"158"}, see debug logs for body
+D, [2018-02-05T21:00:29.707289 #5361] DEBUG -- : body: {"results":[{"name":"Games","sort_name":"Games","id":11,"shortname":"Games"},{"name":"Book Clubs","sort_name":"Book Clubs","id":18,"shortname":"Book Clubs"}]}
