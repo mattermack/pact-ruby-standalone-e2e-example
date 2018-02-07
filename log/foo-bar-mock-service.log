@@ -1,60 +1,28 @@
-I, [2018-02-05T21:06:25.565903 #5653]  INFO -- : Cleared interactions
-I, [2018-02-05T21:06:25.660919 #5653]  INFO -- : Registered expected interaction GET /foo
-D, [2018-02-05T21:06:25.666079 #5653] DEBUG -- : {
-  "description": "General Meetup Categories 6",
-  "providerState": "A GET request to return JSON using Meetups category api under version 2 6",
+I, [2018-02-06T22:09:24.147391 #5337]  INFO -- : Cleared interactions
+I, [2018-02-06T22:09:24.235407 #5337]  INFO -- : Registered expected interaction GET /testme
+D, [2018-02-06T22:09:24.237766 #5337] DEBUG -- : {
+  "description": "TestCase1",
+  "providerState": "TestCase1",
   "request": {
     "method": "GET",
-    "path": "/foo",
-    "headers": {
-    }
+    "path": "/testme"
   },
   "response": {
-    "status": 200,
     "headers": {
     },
     "body": {
-      "results": [
-        {
-          "name": "Games",
-          "sort_name": "Games",
-          "id": 11,
-          "shortname": "Games"
-        },
-        {
-          "name": {
-            "json_class": "Pact::Term",
-            "data": {
-              "generate": "Book Clubs",
-              "matcher": {"json_class":"Regexp","o":0,"s":"Games|Book Clubs"}
-            }
-          },
-          "sort_name": {
-            "json_class": "Pact::Term",
-            "data": {
-              "generate": "Book Clubs",
-              "matcher": {"json_class":"Regexp","o":0,"s":"Games|Book Clubs"}
-            }
-          },
-          "id": {
-            "json_class": "Pact::SomethingLike",
-            "contents": 18
-          },
-          "shortname": {
-            "json_class": "Pact::Term",
-            "data": {
-              "generate": "Book Clubs",
-              "matcher": {"json_class":"Regexp","o":0,"s":"Games|Book Clubs"}
-            }
-          }
-        }
-      ]
+      "myDates": {
+        "json_class": "Pact::SomethingLike",
+        "contents": [
+          "29/10/2015"
+        ]
+      }
     }
   }
 }
-I, [2018-02-05T21:06:25.747958 #5653]  INFO -- : Received request GET /foo
-D, [2018-02-05T21:06:25.749344 #5653] DEBUG -- : {
-  "path": "/foo",
+I, [2018-02-06T22:09:24.312335 #5337]  INFO -- : Received request GET /testme
+D, [2018-02-06T22:09:24.313365 #5337] DEBUG -- : {
+  "path": "/testme",
   "query": "",
   "method": "get",
   "headers": {
@@ -64,60 +32,18 @@ D, [2018-02-05T21:06:25.749344 #5653] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2018-02-05T21:06:25.752363 #5653]  INFO -- : Found matching response for GET /foo
-D, [2018-02-05T21:06:25.757099 #5653] DEBUG -- : {
-  "status": 200,
+I, [2018-02-06T22:09:24.315075 #5337]  INFO -- : Found matching response for GET /testme
+D, [2018-02-06T22:09:24.315927 #5337] DEBUG -- : {
   "headers": {
   },
   "body": {
-    "results": [
-      {
-        "name": "Games",
-        "sort_name": "Games",
-        "id": 11,
-        "shortname": "Games"
-      },
-      {
-        "name": {
-          "json_class": "Pact::Term",
-          "data": {
-            "generate": "Book Clubs",
-            "matcher": {
-              "json_class": "Regexp",
-              "o": 0,
-              "s": "Games|Book Clubs"
-            }
-          }
-        },
-        "sort_name": {
-          "json_class": "Pact::Term",
-          "data": {
-            "generate": "Book Clubs",
-            "matcher": {
-              "json_class": "Regexp",
-              "o": 0,
-              "s": "Games|Book Clubs"
-            }
-          }
-        },
-        "id": {
-          "json_class": "Pact::SomethingLike",
-          "contents": 18
-        },
-        "shortname": {
-          "json_class": "Pact::Term",
-          "data": {
-            "generate": "Book Clubs",
-            "matcher": {
-              "json_class": "Regexp",
-              "o": 0,
-              "s": "Games|Book Clubs"
-            }
-          }
-        }
-      }
-    ]
+    "myDates": {
+      "json_class": "Pact::SomethingLike",
+      "contents": [
+        "29/10/2015"
+      ]
+    }
   }
 }
-I, [2018-02-05T21:06:25.832311 #5653]  INFO -- : Verifying - interactions matched
-I, [2018-02-05T21:06:25.895987 #5653]  INFO -- : Writing pact for Bar to ./pacts/foo-bar.json
+I, [2018-02-06T22:09:24.365177 #5337]  INFO -- : Verifying - interactions matched
+I, [2018-02-06T22:09:24.417210 #5337]  INFO -- : Writing pact for Bar to ./pacts/foo-bar.json
